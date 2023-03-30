@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>LCM1-git</name>
+	<comment></comment>
+	<projects>
+		<project location="file:/C:/Users/ykosta1a/EWS/LCM/MQX/mqx/build/cw10gcc/bsp_twrk64f120m">
+LCM_bsp_twrk64f120m		</project>
+		<project location="file:/C:/Users/ykosta1a/EWS/LCM/MQX/mfs/build/cw10gcc/mfs_twrk64f120m">
+LCM_mfs_twrk64f120m		</project>
+		<project location="file:/C:/Users/ykosta1a/EWS/LCM/MQX/mqx/build/cw10gcc/psp_twrk64f120m">
+LCM_psp_twrk64f120m		</project>
+		<project location="file:/C:/Users/ykosta1a/EWS/LCM/MQX/rtcs/build/cw10gcc/rtcs_twrk64f120m">
+LCM_rtcs_twrk64f120m		</project>
+		<project location="file:/C:/Users/ykosta1a/EWS/LCM/MQX/shell/build/cw10gcc/shell_twrk64f120m">
+LCM_shell_twrk64f120m		</project>
+		<project location="file:/C:/Users/ykosta1a/EWS/LCM/MQX/usb/device/build/cw10gcc/usbd_twrk64f120m">
+LCM_usbd_twrk64f120m		</project>
+		<project location="file:/C:/Users/ykosta1a/EWS/LCM/MQX/usb/host/build/cw10gcc/usbh_twrk64f120m">
+LCM_usbh_twrk64f120m		</project>
+		<project location="file:/C:/Users/ykosta1a/EWS/LCM/WolfMQTT">
+WolfMQTT		</project>
+		<project location="file:/C:/Users/ykosta1a/EWS/LCM/WolfSSL/wolfssl-3.11.0-stable/mqx/wolfssl">
+wolfssl		</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
+			<arguments>
+				<dictionary>
+					<key>?name?</key>
+					<value></value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.append_environment</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.autoBuildTarget</key>
+					<value>all</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.buildArguments</key>
+					<value>-j8</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.buildCommand</key>
+					<value>${GNU_Make_Install_Dir}mingw32-make</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.buildLocation</key>
+					<value>${ProjDirPath}/Int Flash Debug</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.cleanBuildTarget</key>
+					<value>clean</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.contents</key>
+					<value>org.eclipse.cdt.make.core.activeConfigSettings</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableAutoBuild</key>
+					<value>false</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableCleanBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableFullBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.fullBuildTarget</key>
+					<value>all</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.stopOnError</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.useDefaultBuildCmd</key>
+					<value>true</value>
+				</dictionary>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.ScannerConfigBuilder</name>
+			<triggers>full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
+	</natures>
+	<variableList>
+		<variable>
+			<name>MQX_ROOT_DIR</name>
+			<value>$%7BPARENT-1-PROJECT_LOC%7D/MQX</value>
+		</variable>
+	</variableList>
+</projectDescription>

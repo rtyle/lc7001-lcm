@@ -1,0 +1,16 @@
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/Embedded/Includes)
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/Server/Common)
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/Server/LCMServer)
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/external/lightingcommon/headers)
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/Version)
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/Embedded/Sources/jansson)
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/Embedded/Sources/flash)
+
+
+# Add the  Test
+ADD_EXECUTABLE(Event_Task-test
+   Event_Task-test.cpp)
+
+TARGET_LINK_LIBRARIES(Event_Task-test  Common Sources LCMServerLibrary ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+
+ADD_TEST(NAME Event_Task-test COMMAND Event_Task-test)

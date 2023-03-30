@@ -1,0 +1,19 @@
+Color,Search String
+Blue,
+DarkBlue,
+DarkGreen,MemReport
+Grey,*
+Black,fail
+MediumBlue,
+Red,HandleTransmitTaskMessage sending updates
+Green,HandleTargetValue
+DeepSkyBlue,Entering ProcessJsonService
+Lime,
+DarkOliveGreen,SendShadeCommand send result
+Purple,HandleQmotionStatusResponse
+DarkRed,MUTEX_OVERFLOW
+MediumBlue,HandleIndividualProperty setFlag targetPowerLevel
+DarkViolet,ManualEntry
+Brown,QueryQmotionStatus
+Magenta,GetQmotionResponse recv result
+Coral,

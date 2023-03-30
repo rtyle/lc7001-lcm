@@ -1,0 +1,48 @@
+#[[ Legrand modifications:
+
+2019-03-13: Added this file to allow WolfMQTT to be built with cmake
+2019-04-26: Remove DWOLFMQTT_NO_TIMEOUT, add DWOLFMQTT_NONBLOCK
+
+]]
+
+SET(LIBRARY_NAME WolfMQTT)
+
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/WolfSSL/wolfssl-3.11.0-stable)
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/WolfMQTT)
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/WolfMQTT/src)
+
+IF(NOT ${ARCH_BUILD} STREQUAL "amd64")
+   INCLUDE_DIRECTORIES(${MQX_ROOTDIR}/lib/twrk64f120m.cmake/debug/bsp/Generated_Code)
+   INCLUDE_DIRECTORIES(${MQX_ROOTDIR}/lib/twrk64f120m.cmake/debug/bsp/Sources)
+   INCLUDE_DIRECTORIES(${MQX_ROOTDIR}/lib/twrk64f120m.cmake/debug)
+   INCLUDE_DIRECTORIES(${MQX_ROOTDIR}/lib/twrk64f120m.cmake/debug/bsp)
+   INCLUDE_DIRECTORIES(${MQX_ROOTDIR}/lib/twrk64f120m.cmake/debug/psp)
+   INCLUDE_DIRECTORIES(${MQX_ROOTDIR}/lib/twrk64f120m.cmake/debug/mfs)
+   INCLUDE_DIRECTORIES(${MQX_ROOTDIR}/lib/twrk64f120m.cmake/debug/rtcs)
+   INCLUDE_DIRECTORIES(${MQX_ROOTDIR}/lib/twrk64f120m.cmake/debug/shell)
+   INCLUDE_DIRECTORIES(${MQX_ROOTDIR}/lib/twrk64f120m.cmake/debug/usb)
+   INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/tools/toolchain/arm-none-eabi/include)
+   INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/tools/toolchain/lib/gcc/arm-none-eabi/5.2.1/include)
+   INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/tools/toolchain/lib/gcc/arm-none-eabi/5.2.1/include-fixed)
+
+   SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DFREESCALE_MQX -DENABLE_MQTT_TLS -DWOLFMQTT_NO_ERROR_STRINGS -DWOLFMQTT_NO_STDIO -DWOLFMQTT_NONBLOCK")
+ENDIF()
+
+SET(SOURCES
+    src/mqtt_client.c
+    src/mqtt_packet.c
+    src/mqtt_socket.c
+)
+
+ADD_LIBRARY(${LIBRARY_NAME} STATIC ${SOURCES})
+ADD_DEPENDENCIES(${LIBRARY_NAME} version)
+
+IF(NOT ${ARCH_BUILD} STREQUAL "amd64")
+   ADD_DEPENDENCIES(${LIBRARY_NAME} shell)
+   ADD_DEPENDENCIES(${LIBRARY_NAME} mfs)
+   ADD_DEPENDENCIES(${LIBRARY_NAME} bsp)
+   ADD_DEPENDENCIES(${LIBRARY_NAME} psp)
+   ADD_DEPENDENCIES(${LIBRARY_NAME} rtcs)
+   ADD_DEPENDENCIES(${LIBRARY_NAME} usbd)
+   ADD_DEPENDENCIES(${LIBRARY_NAME} usbh)
+ENDIF()

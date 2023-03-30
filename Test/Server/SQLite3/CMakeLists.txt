@@ -1,0 +1,11 @@
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/Server/Common)
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/Server/SQLite3)
+
+# Add the SQLite3 Test
+ADD_EXECUTABLE(SQLite3-test
+   SQLite3-test.cpp)
+
+TARGET_LINK_LIBRARIES(SQLite3-test Common SQLite3 ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY} pthread ${CMAKE_DL_LIBS})
+
+ADD_TEST(NAME SQLite3-db-init COMMAND ${CMAKE_SOURCE_DIR}/Test/Server/SQLite3/db_setup.sh -f test.db ${CMAKE_SOURCE_DIR}/Web/schema.sql)
+ADD_TEST(NAME SQLite3-test COMMAND SQLite3-test)
